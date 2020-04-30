@@ -1,0 +1,37 @@
+Pour commencer il faut configurer des adresse IP statiques sur les deux serveurs WEB et le reverse proxy. Pour plus d'ergonomie vous pouvez changer les noms des machines et également donner des noms aux autre machines dans le répertoire /etc/hosts.
+
+Nous allons tout d'abord installer les différents paquets nécessaire pour un serveur Web multifonction avec une base de données, des modules PHP etc ...
+Le serveur Web en question sera Apache :
+
+apt install apache2
+
+Les modules PHP à installer sont :
+
+apt install php 
+apt install php-mbstring
+apt install php-zip
+apt install php-xml
+apt install php-simplexml
+apt install php-curl
+apt install php php-json
+apt install php-gd
+apt install php-intl
+apt install php-memcache
+apt install php-mysqli
+
+Et le paquet à installer pour la base de donnée :
+
+apt install mariadb-server
+
+Vous pouvez maintenant mettre en place votre site Web dans le répertoire suivant /etc/www/html/ .
+
+Maintenant que vous avez installer les deux serveurs WEBs, nous pouvons mettre en place le reverse proxy, dans ce tutoriel nous allons utiliser HAproxy.
+
+Nous allons donc installer le paquet suivant: 
+apt install haproxy
+
+
+
+
+
+
