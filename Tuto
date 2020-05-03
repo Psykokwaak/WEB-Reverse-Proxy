@@ -30,8 +30,22 @@ Maintenant que vous avez installer les deux serveurs WEBs, nous pouvons mettre e
 Nous allons donc installer le paquet suivant: 
 apt install haproxy
 
+Après avoir installer haproxy sur le serveur, nous allons configurer le fichier /etc/haproxy/haproxy.cfg 
 
+Il faut configurer deux choses, le serveur frontend et backend.
 
+On commence par frontend où l'on va choisir un nom de groupe, on va choisir le bind ( adresse IP et port )
+Par exemple :
+
+Frontend webgrp
+  bind * = 80
+  default_backend webserver
+  
+Ensuite le backend où l'on va renseigner les serveurs WEB que l'on va utilisé, comme ceci par exemple :
+
+backend webserver
+  server SRV1 192.168.1.2 check
+  server SRV2 192.168.1.3 check
 
 
 
